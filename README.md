@@ -3,7 +3,8 @@
 
 安装yo
 `npm install -g yo`
+
 `npm install -g  generator-node-docker`
 
 cli创建node，docker发布文件
-yo node-docker
+`yo node-docker`
