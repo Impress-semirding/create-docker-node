@@ -2,7 +2,7 @@ const promt = [
   {
     type: 'confirm',
     name: 'cool',
-    message: '确认自动生成部署方案,它将会在你的package.json中生成打包命令及生成一些服务端部署代码？'
+    message: '确认适用自动化部署方案？它将会在项目中生成静态服务器代码及生成dockerfile部署方案'
   }
 ]
 

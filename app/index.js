@@ -26,7 +26,6 @@ module.exports = class extends Generators {
       nodir: true,
     })
 
-    console.log('glob files', files)
     const tplList = {
       'serverApp/app.js': 'serverApp/app.js',
     }
@@ -41,7 +40,6 @@ module.exports = class extends Generators {
         )
       } else {
         //  ejs模版渲染
-        console.log('this.data', this.data, 'file', file);
         this.fs.copyTpl(
           this.templatePath(file.src || file),
           this.destinationPath(tplList[file] || file),
@@ -65,7 +63,6 @@ module.exports = class extends Generators {
       static: deploy.static,
       proxy: JSON.stringify(deploy.proxy)
     });
-    // console.log(this.data);
     this._writeJSON(`${this.root}/package.json`, this.appPackage);
   }
 
