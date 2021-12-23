@@ -27,7 +27,7 @@ module.exports = class extends Generators {
     })
 
     const tplList = {
-      'serverApp/app.js': 'serverApp/app.js',
+      // 'serverApp/app.js': 'serverApp/app.js',
     }
 
 
@@ -56,13 +56,7 @@ module.exports = class extends Generators {
     const filename = `${this.root}/package.json`;
     this.appPackage = this._readJSON(filename);
     this.appPackage.scripts.deploy = "npm run build";
-    this.appPackage.scripts.serverApp = "node ./serverApp/app.js";
-    const defaultConfig = this._readJSON(this.templatePath('./.deployrc'));
-    const deploy = this.appPackage.deploy || defaultConfig;
-    this.data = Object.assign({}, this.data, {
-      static: deploy.static,
-      proxy: JSON.stringify(deploy.proxy)
-    });
+    this.appPackage.scripts.serverApp = "npx static-server-script";
     this._writeJSON(`${this.root}/package.json`, this.appPackage);
   }
 

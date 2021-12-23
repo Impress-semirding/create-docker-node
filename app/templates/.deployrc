@@ -1,4 +1,4 @@
 {
   "proxy": {},
-  "static": "../dist"
+  "static": "./dist"
 }
